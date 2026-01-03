@@ -101,7 +101,7 @@ body {
 
 .form-grid {
     display: grid;
-    grid-template-columns: 20rem auto;
+    grid-template-columns: 20rem 20rem;
     /* labels fixed-ish, inputs flexible */
     gap: 0.75rem 1rem;
     /* row gap, column gap */
