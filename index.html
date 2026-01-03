@@ -9,7 +9,94 @@
 </head>
 
 <body id="app">
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
+
+    <div class="container">
+
+        <div class="navContainer">
+            <button class="navItem">view progress</button>
+            <button class="navItem">add activity</button>
+            <button class="navItem">analytics</button>
+        </div>
+
+        <div id="view_progress" class="progressPage">
+            <div class="tileContainer">
+
+                <div class="tile">
+                    <div class="tileHeader">
+                        <div class="tileHeading">first tile</div>
+                        <button class="tileTimeButton">log time</button>
+                    </div>
+
+                    <div class="tileBody">
+                        <div class="tileContent">this is content for the first tile </div>
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <div class="tileHeader">
+                        <div class="tileHeading">second tile</div>
+                        <button class="tileTimeButton">log time</button>
+                    </div>
+
+                    <div class="tileBody">
+                        <div class="tileContent">this is content for the second tile</div>
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <div class="tileHeader">
+                        <div class="tileHeading">third tile</div>
+                        <button class="tileTimeButton">log time</button>
+                    </div>
+
+                    <div class="tileBody">
+                        <div class="tileContent">this is content for the third tile</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div id="section_add_activity" class="add_activity">
+            <div class="add_activity_content">add activity undeveloped</div>
+            <div class="form-area">
+                <form id="form_add_activity">
+                    <div class="form-grid">
+                        <label for="name">name</label>
+                        <input id="name" name="name" type="text" required />
+
+                        <label for="date_due">due</label>
+                        <input id="date_due" name="date_due" type="date" required />
+
+                        <label for="priority">priority ( 1 to 3, 1 weakest )</label>
+                        <input id="priority" name="priority" type="number" />
+
+                        <label for="time_to_complete">estimated time to complete (minutes)</label>
+                        <input id="time_to_complete" name="time_to_complete" type="number" />
+
+                        <label for="recurrence_id">recurrence id</label>
+                        <input id="recurrence_id" name="recurrence_id" type="number" />
+
+                        <label for="project_id">project id</label>
+                        <input id="project_id" name="project_id" type="number" />
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit">add activity</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="analytics" class="analytics">
+        <div class="analytics_content">analyics undeveloped</div>
+    </div>
+
+    </div>
 </body>
 
 </html>

@@ -1,27 +1,126 @@
+:root {
+    --accent: lightblue;
+    --accent-soft: #e8f4fb;
+    --accent-ink: #2c5d7d;
+    --font-sans: "Segoe UI", "Calibri", "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Cambria, "Georgia", "Times New Roman", serif;
+}
+
 body {
-    font-family: system-ui, sans-serif;
-    margin: 1rem;
+    font-family: var(--font-sans);
 }
 
-input {
-    padding: .5rem;
-    margin-right: .5rem;
+.container {
+    max-width: 1000px;
 }
 
-button {
-    padding: .5rem 1rem;
-}
-
-ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-div {
-    background-color: lightgrey;
+.navContainer {
+    display: flex;
+    gap: 1rem;
     padding: 1rem;
 }
 
-li {
-    padding: .25rem 0;
+.navItem {
+    padding: 0.5rem;
+    border: solid var(--accent) 2px;
+    border-radius: 0.5rem;
+    background: var(--accent-soft);
+    cursor: pointer;
+}
+
+.tileContainer {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.progressPage {
+    padding: 1rem;
+}
+
+.tile {
+    padding: 1rem;
+    border: solid var(--accent) 2px;
+    border-radius: 0.25rem;
+    flex: 0 1 250px;
+    box-shadow: 2px 2px var(--accent);
+    transition: box-shadow 0.2s ease;
+}
+
+.tile:hover {
+    box-shadow: 0px 0px var(--accent);
+}
+
+.tileHeader {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    font-weight: bold;
+    align-items: center;
+}
+
+.tileTimeButton {
+    font-weight: bold;
+    padding: 0.5rem;
+    border: solid var(--accent) 2px;
+    border-radius: 0.5rem;
+    background: var(--accent-soft);
+    cursor: pointer;
+}
+
+.add_activity {
+    padding: 1rem;
+}
+
+.analytics {
+    padding: 1rem;
+}
+
+.form-grid label {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.form-grid input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: white;
+}
+
+.form-grid input {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #bbb;
+    border-radius: 0.1rem;
+    justify-content: right;
+}
+
+.add_activity_content {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 20rem auto;
+    /* labels fixed-ish, inputs flexible */
+    gap: 0.75rem 1rem;
+    /* row gap, column gap */
+}
+
+.form-actions {
+    display: grid;
+    margin-top: 1rem;
+    justify-content: left;
+}
+
+.form-actions button {
+    width: 100%;
+    padding: 0.6rem 1.2rem;
+}
+
+
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 }
