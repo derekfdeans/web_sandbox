@@ -13,13 +13,17 @@
 
     <div class="container">
 
-        <div class="navContainer">
+        <div id ="navigation" class="navigation">
             <button class="navItem">view progress</button>
             <button class="navItem">add activity</button>
             <button class="navItem">analytics</button>
+            <button class="navItem">settings</button>
         </div>
 
-        <div id="view_progress" class="progressPage">
+        <hr />
+
+        <div id="progressPage" class="progressPage">
+            <div class="sectionHeader">view progress</div>
             <div class="tileContainer">
 
                 <div class="tile">
@@ -58,10 +62,10 @@
             </div>
         </div>
 
+        <hr />
 
-
-        <div id="section_add_activity" class="add_activity">
-            <div class="add_activity_content">add activity undeveloped</div>
+        <div id="add_activity" class="add_activity">
+            <div class="sectionHeader">add activity section</div>
             <div class="form-area">
                 <form id="form_add_activity">
                     <div class="form-grid">
@@ -90,11 +94,18 @@
                 </form>
             </div>
         </div>
-    </div>
 
-    <div id="analytics" class="analytics">
-        <div class="analytics_content">analyics undeveloped</div>
-    </div>
+        <hr />
+
+        <div id="analytics" class="analytics">
+            <div class="sectionHeader">analytics section</div>
+        </div>
+
+        <hr />
+
+        <div id="settings" class="settings">
+            <div class="sectionHeader">settings</div>
+        </div>
 
     </div>
 </body>
