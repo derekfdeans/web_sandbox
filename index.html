@@ -9,105 +9,123 @@
 </head>
 
 <body id="app">
-    <!-- <script src="main.js"></script> -->
-
     <div class="container">
 
-        <div id ="navigation" class="navigation">
-            <button class="navItem">view progress</button>
-            <button class="navItem">add activity</button>
-            <button class="navItem">analytics</button>
-            <button class="navItem">settings</button>
+        <div id="navigation" class="nav_container">
+            <button class="universal_button nav_item" id="nav_view_progress">view progress</button>
+            <button class="universal_button nav_item" id="nav_manage_activities">manage activities</button>
+            <button class="universal_button nav_item" id="nav_analytics">analytics</button>
+            <button class="universal_button nav_item" id="nav_settings">settings</button>
         </div>
 
-        <hr />
-
-        <div id="progressPage" class="progressPage">
-            <div class="sectionHeader">view progress</div>
-            <div class="tileContainer">
-
-                <div class="tile">
-                    <div class="tileHeader">
-                        <div class="tileHeading">first tile</div>
-                        <button class="tileTimeButton">log time</button>
-                    </div>
-
-                    <div class="tileBody">
-                        <div class="tileContent">this is content for the first tile </div>
-                    </div>
-                </div>
-
-                <div class="tile">
-                    <div class="tileHeader">
-                        <div class="tileHeading">second tile</div>
-                        <button class="tileTimeButton">log time</button>
-                    </div>
-
-                    <div class="tileBody">
-                        <div class="tileContent">this is content for the second tile</div>
-                    </div>
-                </div>
-
-                <div class="tile">
-                    <div class="tileHeader">
-                        <div class="tileHeading">third tile</div>
-                        <button class="tileTimeButton">log time</button>
-                    </div>
-
-                    <div class="tileBody">
-                        <div class="tileContent">this is content for the third tile</div>
-                    </div>
-                </div>
-
-            </div>
+        <div id="content_container">
+            <!-- place content in here -->
         </div>
 
-        <hr />
+        <!-- start of add activity page-->
+        <div class="add_activity_page">
+            <div class="section_header">add activity section</div>
 
-        <div id="add_activity" class="add_activity">
-            <div class="sectionHeader">add activity section</div>
-            <div class="form-area">
+            <div class="tile">
+                <div class="tile_header">
+                    <div class="tile_heading">create new activity</div>
+                </div>
+
                 <form id="form_add_activity">
-                    <div class="form-grid">
-                        <label for="name">name</label>
-                        <input id="name" name="name" type="text" required />
+                    <div class="form_grid">
+                        <label for="task_name">name</label>
+                        <input id="task_name" name="task_name" type="text" required />
 
-                        <label for="date_due">due</label>
-                        <input id="date_due" name="date_due" type="date" required />
+                        <label for="task_date_due">due</label>
+                        <input id="task_date_due" name="task_date_due" type="date" required />
 
-                        <label for="priority">priority ( 1 to 3, 1 weakest )</label>
-                        <input id="priority" name="priority" type="number" />
+                        <label for="task_goal_time">goal time to spend in minutes each day </label>
+                        <input id="task_goal_time" name="task_goal_time" type="number" />
 
-                        <label for="time_to_complete">estimated time to complete (minutes)</label>
-                        <input id="time_to_complete" name="time_to_complete" type="number" />
+                        <label for="task_priority">priority ( 1 to 3, 1 is weakest )</label>
+                        <input id="task_priority" name="task_priority" type="number" required />
 
-                        <label for="recurrence_id">recurrence id</label>
-                        <input id="recurrence_id" name="recurrence_id" type="number" />
+                        <label for="task_time_to_complete">estimated time to complete (minutes)</label>
+                        <input id="task_time_to_complete" name="task_time_to_complete" type="number" />
 
-                        <label for="project_id">project id</label>
-                        <input id="project_id" name="project_id" type="number" />
+                        <label for="task_recurrence_id">recurrence id (create a new one below)</label>
+                        <input id="task_recurrence_id" name="task_recurrence_id" type="number" />
+
+                        <label for="task_project_id">project id (create a new one below)</label>
+                        <input id="task_project_id" name="task_project_id" type="number" />
                     </div>
 
-                    <div class="form-actions">
-                        <button type="submit">add activity</button>
+                    <div class="form_actions">
+                        <button type="submit" class="universal_button">add activity</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- "add new recurrence" -->
+            <button class="universal_button">add new recurrence pattern</button>
+            <div class="tile">
+                <div class="tile_header">
+                    <div class="tile_heading">create new recurrence</div>
+                </div>
+
+                <form id="form_add_recurrence">
+                    <div class="form_grid">
+                        <label for="recurrence_name">name</label>
+                        <input id="recurrence_name" name="recurrence_name" type="text" required />
+
+                        <label for="recurrence_rule">recurrence rule (string)</label>
+                        <input id="recurrence_rule" name="recurrence_rule" type="text" required />
+
+                        <label for="recurrence_start_date">start date</label>
+                        <input id="recurrence_start_date" name="recurrence_start_date" type="date" required />
+
+                        <label for="recurrence_end_date">end date</label>
+                        <input id="recurrence_end_date" name="recurrence_end_date" type="date" />
+                    </div>
+
+                    <div class="form_actions">
+                        <button type="submit" class="universal_button">add recurrence</button>
+
+                    </div>
+                </form>
+            </div>
+
+            <!-- "add new project"-->
+            <button class="universal_button">add new project</button>
+            <div class="tile">
+                <div class="tile_header">
+                    <div class="tile_heading">create new project</div>
+                </div>
+
+                <form id="form_add_project">
+                    <div class="form_grid">
+                        <label for="project_name">name of project</label>
+                        <input id="project_name" name="project_name" type="text" required />
+
+                        <label for="project_color">color</label>
+                        <select id="project_color" name="project_color" required>
+                            <option value="#ffadad">red</option>
+                            <option value="#ffd6a5">orange</option>
+                            <option value="#fdffb6">yellow</option>
+                            <option value="#caffbf">green</option>
+                            <option value="#add8e6">blue</option>
+                            <option value="#bdb2ff">indigo</option>
+                            <option value="#ffc6ff">violet</option>
+                        </select>
+
+                        <label for="project_goal">goal for project (optional)</label>
+                        <input id="project_goal" name="project_goal" type="text" />
+                    </div>
+
+                    <div class="form_actions">
+                        <button type="submit" class="universal_button">add project</button>
                     </div>
                 </form>
             </div>
         </div>
-
-        <hr />
-
-        <div id="analytics" class="analytics">
-            <div class="sectionHeader">analytics section</div>
-        </div>
-
-        <hr />
-
-        <div id="settings" class="settings">
-            <div class="sectionHeader">settings</div>
-        </div>
-
     </div>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
